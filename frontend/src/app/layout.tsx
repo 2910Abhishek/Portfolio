@@ -7,16 +7,16 @@ import Footer from "../components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abhishek Parmar - AI & Full-Stack Developer",
+  title: "Abhishek Parmar - Portfolio",
   description:
-    "Portfolio of Abhishek Parmar, a B.Tech Computer Science student specializing in AI, machine learning, and full-stack development.",
+    "Personal portfolio of Abhishek Parmar, showcasing AI solutions and full-stack development projects.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>

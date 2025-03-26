@@ -1,25 +1,50 @@
-export default function Skills() {
-    return (
-      <section className="p-10">
-        <h1 className="text-4xl font-bold mb-8">My Expertise</h1>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <h3 className="text-xl font-bold">Languages</h3>
-            <p>Python, C/C++, SQL, Dart</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <h3 className="text-xl font-bold">Frameworks & Libraries</h3>
-            <p>React, Node.js, Flask, Flutter, TensorFlow, PyTorch</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <h3 className="text-xl font-bold">Machine Learning</h3>
-            <p>Supervised Learning, CNNs, RNNs, Transformers, LLMs</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <h3 className="text-xl font-bold">Data Science</h3>
-            <p>Data Analysis, Data Visualization, Feature Engineering</p>
-          </div>
+const Skills = () => {
+  const skills = [
+    {
+      icon: "🎯",
+      title: "Strategy & Direction",
+      description: "Experienced in developing AI strategies and technical roadmaps for complex projects.",
+    },
+    {
+      icon: "🧠",
+      title: "AI & Machine Learning",
+      description: "Proficient in developing and deploying machine learning models and AI solutions.",
+    },
+    {
+      icon: "💻",
+      title: "Full Stack Development",
+      description: "Expert in building modern web applications using Next.js, React, and Node.js.",
+    },
+    {
+      icon: "🔧",
+      title: "DevOps & Cloud",
+      description: "Skilled in deploying and managing applications using cloud platforms and DevOps practices.",
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="mb-12">
+          <h3 className="text-gray-600 mb-2">My Skills</h3>
+          <h2 className="text-4xl font-bold">My Expertise</h2>
         </div>
-      </section>
-    );
-  }
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skills.map((skill, index) => (
+            <div 
+              key={index}
+              className="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl mb-4">{skill.icon}</div>
+              <h3 className="text-xl font-semibold mb-3">{skill.title}</h3>
+              <p className="text-gray-600">{skill.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
