@@ -1,26 +1,35 @@
 import Hero from "../components/Hero";
 import Skills from "../components/Skills";
-import PortfolioCard from "../components/PortfolioCard";
-import { projects } from "../data/projects";
+import About from "../components/About";
+import PortfolioSection from "../components/PortfolioSection";
+import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Skills />
-      <section className="p-10">
-        <h1 className="text-4xl font-bold mb-8">My Portfolio</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <PortfolioCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              link={project.link}
-            />
-          ))}
-        </div>
+    <main className="overflow-hidden">
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen">
+        <Hero />
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="min-h-screen py-20">
+        <About />
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="min-h-screen py-20 bg-gray-50">
+        <Skills />
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="min-h-screen py-20">
+        <PortfolioSection />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="min-h-screen py-20 bg-gray-50">
+        <ContactForm />
       </section>
     </main>
   );
