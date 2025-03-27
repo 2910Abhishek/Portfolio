@@ -20,14 +20,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     const initialTheme = savedTheme || systemTheme;
     setTheme(initialTheme);
-    document.documentElement.classList.add(initialTheme);
+    document.documentElement.className = initialTheme; // Changed this line
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(newTheme);
+    document.documentElement.className = newTheme; // Changed this line
     localStorage.setItem('theme', newTheme);
   };
 
@@ -44,4 +43,4 @@ export function useTheme() {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
-} 
+}
