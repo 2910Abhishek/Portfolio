@@ -9,14 +9,14 @@ html {
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 17, 24, 39;
-    --background-end-rgb: 31, 41, 55;
+    --background-start-rgb: 15, 23, 42;
+    --background-end-rgb: 15, 23, 42;
   }
 }
 
@@ -38,4 +38,32 @@ body {
 * {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* Premium animations and transitions */
+.hover-scale {
+  @apply transition-transform duration-300;
+}
+
+.hover-scale:hover {
+  @apply transform scale-105;
+}
+
+.fade-in {
+  @apply transition-opacity duration-700;
+}
+
+.smooth-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600;
+}
+
+/* Elegant shadow */
+.premium-shadow {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+  @apply dark:shadow-[0_10px_30px_-15px_rgba(255,255,255,0.05)];
 }
