@@ -7,12 +7,12 @@ const Skills = () => {
     {
       icon: "🧠",
       title: "AI & Machine Learning",
-      description: "I develop intelligent systems using supervised learning, deep learning (CNNs, RNNs, Transformers), and LLMs to solve real-world problems.",
+      description: "I develop intelligent systems using supervised learning, unsupervised learning, CNNs, RNNs, Transformers, and LLMs to solve real-world problems.",
     },
     {
       icon: "📱",
       title: "Flutter Development",
-      description: "I create cross-platform mobile apps with Flutter, delivering fast, beautiful, and responsive user experiences for iOS and Android.",
+      description: "I create cross-platform mobile apps with Flutter, delivering fast, beautiful, and responsive experiences for iOS and Android.",
     },
     {
       icon: "📊",
@@ -22,7 +22,7 @@ const Skills = () => {
     {
       icon: "💻",
       title: "Full-Stack Development",
-      description: "I build end-to-end applications with React, Node.js, and Flask, integrating AI models and mobile apps into seamless solutions.",
+      description: "I build end-to-end applications with React, Node.js, Flask, and Flutter, integrating AI models into mobile apps seamlessly.",
     },
   ];
 
