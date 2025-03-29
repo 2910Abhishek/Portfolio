@@ -138,7 +138,7 @@ const Hero = () => {
               ></motion.div>
               <div className="absolute inset-0 bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/Abhishek-removebg-preview.png"
                   alt="Abhishek Parmar"
                   fill
                   className="object-cover rounded-2xl"
