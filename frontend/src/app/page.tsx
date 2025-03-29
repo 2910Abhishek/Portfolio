@@ -18,17 +18,17 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="min-h-screen py-20 bg-gray-50">
+      <section id="skills" className="min-h-screen py-20 bg-gray-50 dark:bg-gray-900">
         <Skills />
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="min-h-screen py-20">
+      <section id="portfolio" className="min-h-screen py-20 dark:bg-gray-900">
         <PortfolioSection />
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen py-20 bg-gray-50">
+      <section id="contact" className="min-h-screen py-20 bg-gray-50 dark:bg-gray-900">
         <ContactForm />
       </section>
     </main>

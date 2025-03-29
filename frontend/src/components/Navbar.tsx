@@ -53,7 +53,7 @@ const Navbar = () => {
               Skills
             </a>
             <a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer">
-              Portfolio
+              Project
             </a>
             <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer">
               Contact
@@ -89,7 +89,7 @@ const Navbar = () => {
                 Skills
               </a>
               <a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer">
-                Portfolio
+                Project
               </a>
               <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer">
                 Contact

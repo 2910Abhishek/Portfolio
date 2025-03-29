@@ -27,7 +27,7 @@ export default function RootLayout({
         min-h-screen`}
       >
         <ThemeProvider>
-          <div className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 min-h-screen">
+          <div className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-900 min-h-screen">
             <Navbar />
             <main className="relative z-10">{children}</main>
             <ThemeToggle />
