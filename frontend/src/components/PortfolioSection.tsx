@@ -37,14 +37,14 @@ const PortfolioSection = () => {
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
           {projects.map((project) => (
-            <motion.div key={project.id} variants={itemVariants} className="h-full">
+            <motion.div key={project.id} variants={itemVariants} className="h-full w-full max-w-md">
               <PortfolioCard
                 title={project.title}
                 description={project.description}

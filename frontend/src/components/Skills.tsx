@@ -10,19 +10,14 @@ const Skills = () => {
       description: "I develop intelligent systems using supervised learning, unsupervised learning, CNNs, RNNs, Transformers, and LLMs to solve real-world problems.",
     },
     {
-      icon: "📱",
-      title: "Flutter Development",
-      description: "I create cross-platform mobile apps with Flutter, delivering fast, beautiful, and responsive experiences for iOS and Android.",
+      icon: "🤖",
+      title: "Automation & RAG",
+      description: "I build powerful automation systems using Retrieval-Augmented Generation (RAG) to create intelligent, context-aware applications that streamline workflows.",
     },
     {
       icon: "📊",
       title: "Data Science",
       description: "I analyze and visualize data to uncover insights, using tools like Python, Pandas, and Matplotlib for feature engineering and decision-making.",
-    },
-    {
-      icon: "💻",
-      title: "Full-Stack Development",
-      description: "I build end-to-end applications with React, Node.js, Flask, and Flutter, integrating AI models into mobile apps seamlessly.",
     },
   ];
 
@@ -53,12 +48,12 @@ const Skills = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">My Expertise</h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg">
-            Specialized skills in AI, mobile development, and full-stack solutions
+            Specialized skills in AI, machine learning, and automation solutions
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -67,7 +62,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div 
               key={index}
-              className="p-8 bg-white dark:bg-gray-800 rounded-xl premium-shadow dark:shadow-none overflow-hidden relative group"
+              className="p-8 bg-white dark:bg-gray-800 rounded-xl premium-shadow dark:shadow-none overflow-hidden relative group w-full max-w-md"
               variants={itemVariants}
               whileHover={{ 
                 y: -8, 

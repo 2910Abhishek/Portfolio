@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Abhishek Parmar - Portfolio",
   description:
-    "Personal portfolio of Abhishek Parmar, showcasing AI solutions and full-stack development projects.",
+    "Personal portfolio of Abhishek Parmar, showcasing AI solutions and automation projects.",
 };
 
 export default function RootLayout({

@@ -39,7 +39,7 @@ export default function About() {
                 I'm Abhishek Parmar, a B.Tech Computer Science student at Charotar University of Science and Technology (CGPA: 9.67), graduating in May 2026. I've interned at Topia Lifesciences and CLUMOSS, where I built APIs and machine learning models to solve real-world problems.
               </p>
               <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                I've solved over 400 coding challenges on LeetCode and HackerRank, earned a 5-star coder status in C/C++, and secured a top 8 position in a hackathon by Gateway Group of Companies. I'm passionate about AI, machine learning, and full-stack development.
+                I've solved over 400 coding challenges on LeetCode and HackerRank, earned a 5-star coder status in C/C++, and secured a top 8 position in a hackathon by Gateway Group of Companies. I'm passionate about AI, machine learning, and automation technologies.
               </p>
             </motion.div>
           </motion.div>

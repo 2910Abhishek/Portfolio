@@ -9,16 +9,57 @@ const ContactForm = () => {
     lastName: '',
     email: '',
     phone: '',
-    message: '',
-    acceptTerms: false
+    message: ''
   });
 
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank You for the message i will get back to you soon',
+      });
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -252,45 +293,40 @@ const ContactForm = () => {
               </motion.div>
             </motion.div>
 
-            <motion.div className="flex items-center" variants={itemVariants}>
-              <motion.div
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.2 }}
-              >
-                <input
-                  type="checkbox"
-                  id="acceptTerms"
-                  name="acceptTerms"
-                  checked={formData.acceptTerms}
-                  onChange={handleChange}
-                  onFocus={() => handleFocus('acceptTerms')}
-                  onBlur={handleBlur}
-                  className="h-4 w-4 text-purple-600 dark:text-purple-400 focus:ring-purple-500 dark:focus:ring-purple-400 border-gray-300 dark:border-gray-600 rounded"
-                  required
-                />
-              </motion.div>
-              <label htmlFor="acceptTerms" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                I agree to the terms and conditions
-              </label>
-            </motion.div>
-
             <motion.button
               type="submit"
-              className="w-full bg-purple-600 dark:bg-purple-500 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 relative overflow-hidden group"
+              className="w-full bg-purple-600 dark:bg-purple-500 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.02,
                 transition: { duration: 0.2 }
               }}
               whileTap={{ scale: 0.98 }}
+              disabled={isSubmitting}
             >
               <motion.span 
                 className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
               />
-              <span className="relative z-10">Send Message</span>
+              <span className="relative z-10">
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </span>
             </motion.button>
+
+            {submitStatus.type && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`mt-4 p-4 rounded-lg ${
+                  submitStatus.type === 'success'
+                    ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300'
+                    : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'
+                }`}
+              >
+                {submitStatus.message}
+              </motion.div>
+            )}
           </motion.form>
         </motion.div>
       </div>

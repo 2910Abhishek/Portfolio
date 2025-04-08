@@ -92,7 +92,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              I build AI-driven solutions and Flutter applications
+              I build AI-driven solutions and automation systems
             </motion.h1>
             <motion.p 
               className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
@@ -100,7 +100,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              As a B.Tech Computer Science student, I specialize in creating intelligent systems with AI/ML and seamless mobile experiences with Flutter.
+              As a B.Tech Computer Science student, I specialize in creating intelligent systems with AI/ML and powerful automation solutions with RAG.
             </motion.p>
             <motion.button
               onClick={scrollToContact}

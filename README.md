@@ -1,6 +1,6 @@
 # Abhishek Parmar Portfolio
 
-This is my professional portfolio website, showcasing my skills, projects, and experience as a B.Tech Computer Science student specializing in AI, machine learning, and full-stack development.
+This is my professional portfolio website, showcasing my skills, projects, and experience as a B.Tech Computer Science student specializing in AI, machine learning, and automation technologies.
 
 ## Tech Stack
 - Frontend: Next.js with TypeScript and Tailwind CSS

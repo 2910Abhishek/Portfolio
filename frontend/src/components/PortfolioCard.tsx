@@ -16,6 +16,11 @@ interface PortfolioCardProps {
 
 const PortfolioCard = ({ title, description, image, githubUrl, liveUrl, technologies }: PortfolioCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <>
@@ -29,13 +34,23 @@ const PortfolioCard = ({ title, description, image, githubUrl, liveUrl, technolo
         onClick={() => setIsModalOpen(true)}
       >
         <div className="relative h-48 overflow-hidden">
-          <motion.img 
-            src={image} 
-            alt={title} 
-            className="w-full h-full object-cover"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5 }}
-          />
+          {!imageError && image ? (
+            <motion.img 
+              src={image} 
+              alt={title} 
+              className="w-full h-full object-cover"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.5 }}
+              onError={handleImageError}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30">
+              <div className="text-center p-4">
+                <div className="text-4xl mb-2">🤖</div>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{title}</p>
+              </div>
+            </div>
+          )}
           <motion.div 
             className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0"
             whileHover={{ opacity: 1 }}
@@ -127,12 +142,22 @@ const PortfolioCard = ({ title, description, image, githubUrl, liveUrl, technolo
               </div>
               
               <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden">
-                <Image
-                  src={image}
-                  alt={title}
-                  fill
-                  className="object-cover"
-                />
+                {!imageError && image ? (
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                    onError={handleImageError}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30">
+                    <div className="text-center p-4">
+                      <div className="text-6xl mb-3">🤖</div>
+                      <p className="text-lg font-medium text-gray-700 dark:text-gray-300">{title}</p>
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div className="mb-6">

@@ -11,6 +11,20 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: 'prompt2code',
+        title: 'Prompt2Code',
+        description: [
+            'Developed a Python-based API service that dynamically retrieves and executes automation functions using Retrieval-Augmented Generation (RAG) and an LLM.',
+            'Implemented a robust function registry for application control, system monitoring, and command execution with comprehensive error handling.',
+            'Created a RAG pipeline using ChromaDB and CodeT5 for dynamic code generation, with session memory for context-aware responses.',
+            'Built a FastAPI service with endpoints for function execution and addition, with terminal execution for real-time results.'
+        ],
+        image: '/images/Prompt2Code.png',
+        technologies: ['Python', 'FastAPI', 'ChromaDB', 'LangChain', 'HuggingFace', 'PyTorch'],
+        githubUrl: 'https://github.com/yourusername/Prompt2Code',
+        featured: true
+    },
+    {
         id: 'interview-genie',
         title: 'Interview Genie',
         description: [
@@ -38,32 +52,4 @@ export const projects: Project[] = [
         liveUrl: 'https://play.google.com/store/apps/details?id=com.yourusername.attendx',
         featured: true
     },
-    {
-        id: 'doctor-appointment',
-        title: 'Doctor Appointment App',
-        description: [
-            'Developed an algorithm to optimize patient scheduling, reducing average waiting time in hospitals by up to 15 minutes.',
-            'Implemented functionality allowing patients to upload and access their medical reports through the app, facilitating easy retrieval and management.',
-            'Provided interactive graphs for diabetes and blood pressure data analytics, enabling patients to monitor and manage their health over time.'
-        ],
-        image: '/images/doctor-appointment.jpg',
-        technologies: ['Flutter', 'Firebase', 'Python'],
-        githubUrl: 'https://github.com/yourusername/doctor-appointment',
-        liveUrl: 'https://play.google.com/store/apps/details?id=com.yourusername.doctorapp',
-        featured: true
-    },
-    {
-        id: 'disease-predictor',
-        title: 'Disease Predictor App',
-        description: [
-            'Designed and trained a machine learning model to predict potential diseases based on user-input symptoms, achieving an accuracy of 91% in disease identification.',
-            'Developed an API to integrate the ML model into the application, enabling seamless disease prediction and reducing response time to under 300 ms.',
-            'Incorporated Google Maps API to locate and display the nearest hospitals, improving user accessibility to healthcare services by 30%.'
-        ],
-        image: '/images/disease-predictor.jpg',
-        technologies: ['Python', 'Firebase', 'Google Maps API'],
-        githubUrl: 'https://github.com/yourusername/disease-predictor',
-        liveUrl: 'https://play.google.com/store/apps/details?id=com.yourusername.diseasepredictor',
-        featured: true
-    }
 ];
