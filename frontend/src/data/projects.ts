@@ -21,7 +21,7 @@ export const projects: Project[] = [
         ],
         image: '/images/Prompt2Code.png',
         technologies: ['Python', 'FastAPI', 'ChromaDB', 'LangChain', 'HuggingFace', 'PyTorch'],
-        githubUrl: 'https://github.com/yourusername/Prompt2Code',
+        githubUrl: 'https://github.com/2910Abhishek/Prompt2Code',
         featured: true
     },
     {
@@ -34,8 +34,8 @@ export const projects: Project[] = [
         ],
         image: '/images/interview-genie.jpg',
         technologies: ['Python', 'React', 'TensorFlow', 'Hugging Face', 'OpenAI API'],
-        githubUrl: 'https://github.com/yourusername/interview-genie',
-        liveUrl: 'https://interview-genie.vercel.app',
+        githubUrl: 'https://github.com/2910Abhishek/interview-genie',
+        liveUrl: '',
         featured: true
     },
     {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
         ],
         image: '/images/attendx.jpg',
         technologies: ['Python', 'Flask', 'React Native', 'PostgreSQL', 'MongoDB', 'Firebase'],
-        githubUrl: 'https://github.com/yourusername/attendx',
+        githubUrl: 'https://github.com/2910Abhishek/attendx',
         liveUrl: 'https://play.google.com/store/apps/details?id=com.yourusername.attendx',
         featured: true
     },
